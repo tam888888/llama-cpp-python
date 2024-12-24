@@ -31,7 +31,7 @@ build.debug.extra:
 		--editable .
 
 build.cuda:
-	CMAKE_ARGS="-DGGML_CUDA=on" python3 -m pip install --verbose -e .
+	CMAKE_ARGS="-DGGML_CUDA=on -DCUDA_cuda_driver_LIBRARY=/usr/local/cuda/compat/libcuda.so" python3 -m pip install --verbose -e .
 
 build.openblas:
 	CMAKE_ARGS="-DGGML_BLAS=ON -DGGML_BLAS_VENDOR=OpenBLAS" python3 -m pip install --verbose -e .
